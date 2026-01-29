@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <!-- 基本資訊 -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO 基礎設定 -->
+    <title>台中清水代天巡狩府·線上點燈</title>
+
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/dsg5wang/my-website/refs/heads/main/images/DSGlogo.png" type="image/x-icon" media="screen">
+    <link rel="stylesheet" href="light-style.css" />
+
+
+    <meta name="description" content="台中清水代天巡狩府·孝恩之廟，主祀五府千歲，是台中海線重要信仰中心，弘揚孝恩精神，結合慈善與宗教文化。" />
+    <meta name="keywords" content="台中清水,代天巡狩府,孝恩之廟,五府千歲,池府王爺,宮廟,宗教文化,孝,恩,德,慈善,濟世" />
+    <meta name="author" content="台中清水代天巡狩府·孝恩之廟" />
+    <meta http-equiv="Content-Language" content="zh-TW" />
+    <meta name="copyright" content="台中清水代天巡狩府·孝恩之廟" />
+
+
+    <!-- 社群分享 Open Graph og:image 和 twitter:image 的網址建議改成你主機上的神明圖片(建議 1200x630px）-->
+    <meta property="og:title" content="台中清水代天巡狩府·孝恩之廟" />
+    <meta property="og:description" content="五府千歲聖恩浩蕩，孝恩之廟敬奉神明，弘揚孝道精神，推動慈善濟世。" />
+    <meta property="og:image" content="https://raw.githubusercontent.com/dsg5wang/my-website/refs/heads/main/images/宮廟主視覺.jpg" />
+    <meta property="og:url" content="https://www.DSG5WANG.org.tw/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="zh_TW" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="台中清水代天巡狩府·孝恩之廟" />
+    <meta name="twitter:description" content="五府千歲聖恩浩蕩，台中海線信仰地標。" />
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/dsg5wang/my-website/refs/heads/main/images/宮廟主視覺.jpg" />
+
+
+    <script src="https://cdn.jsdelivr.net/npm/dialog-polyfill@0.5.6/dist/dialog-polyfill.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dialog-polyfill@0.5.6/dist/dialog-polyfill.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- 引入 Font Awesome (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/lunar-javascript/lunar.min.js"></script>
+    <!-- 在 <head> 加入 Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- 若你已有毛筆字體，放在 /fonts，並於 style.css 中 @font-face 載入即可 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap" rel="stylesheet">
+    <script>
+        if (!HTMLDialogElement.prototype.showModal) {
+            document.write('<script src="https://unpkg.com/dialog-polyfill@0.5.6/dist/dialog-polyfill.min.js"><\/script>');
+        }
+    </script>
+</head>
+
+<body>
+    <!-- 頂部導覽 -->
+    <header class="site-header">
+        <div class="brand">
+            <img src="https://raw.githubusercontent.com/dsg5wang/my-website/refs/heads/main/images/DSGLogo2.png" alt="代天巡狩府" class="logo-icon">
+
+            <h1 class="brand-title" data-text="代天巡狩府">代天巡狩府</h1>
+            <div class="brand-sub" data-text="線上點燈 Light Offering">線上點燈 Light Offering</div>
+        </div>
+        <nav class="site-nav">
+            <a href="index_代天巡狩府首頁.html">首頁</a>
+            <a href="#types" class="scroll-link">燈種</a>
+            <a href="#form" class="scroll-link">填寫資料</a>
+            <a href="#faq" class="scroll-link">常見問題</a>
+
+            <div class="social-icons">
+                <!-- facebook，youyube，line，tiktok icon連結 -->
+                <a class="social-icon facebook" href="https://www.facebook.com/DSG5WANG" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a class="social-icon youtube" href="https://www.youtube.com/@清水代巡宮五府千歲" target="_blank" aria-label="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a class="social-icon line" href="https://line.me/清水代巡宮《五府千歲》" target="_blank" aria-label="LINE">
+                    <i class="fab fa-line "></i>
+                </a>
+                <a class="social-icon tiktok" href="https://www.tiktok.com/" target="_blank" aria-label="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 主視覺 -->
+    <section class="main-section">
+        <div class="section-inner">
+            <h2 class="section-title">虔心一燈｜護佑一家安康</h2>
+            <p class="section-desc">線上登記、到宮安奉｜祈願光明、消災延壽、學業進步、事業順利</p>
+            <a class="btn btn-primary" href="#form">立即點燈</a>
+        </div>
+        <div class="section-decor" aria-hidden="true"></div>
+    </section>
+
+    <!-- 燈別選擇 -->
+    <section id="types" class="section container">
+        <h3 class="sec-title">選擇燈種</h3>
+        <div class="grid cards">
+            <!-- 元神燈 -->
+            <article class="card">
+                <!-- <div class="card-ribbon">人氣</div> -->
+                <img src="images/元神燈.png" alt="元神燈" class="card-img">
+                <h4>元神燈</h4>
+                <p class="card-desc">祈求元神光彩、運途亨通、逢凶化吉、平安順遂。</p>
+                <div class="card-price" data-price="1000">NT$ 1000/盞</div>
+                <button class="btn btn-outline add-item" data-id="yuanshen" data-name="元神燈" data-price="1000">加入</button>
+            </article>
+            <!-- 財利燈 -->
+            <article class="card">
+                <img src="images/元神燈.png" alt="財利燈" class="card-img">
+                <h4>財利燈</h4>
+                <p class="card-desc">祈求財源廣進、財利雙收、事業順利、業績興旺。</p>
+                <div class="card-price" data-price="1000">NT$ 1000/盞</div>
+                <!-- 外框按鈕（Outline button）的樣式 -->
+                <button class="btn btn-outline add-item" data-id="riches" data-name="財利燈" data-price="1000">加入</button>
+            </article>
+            <!-- 全家福平安燈 -->
+            <article class="card">
+                <img src="images/元神燈.png" alt="全家福平安燈" class="card-img">
+                <h4>全家福平安燈</h4>
+                <p class="card-desc">祈求全家祛厄降福、身體安康、圓滿如意、闔家平安。</p>
+                <div class="card-price" data-price="2000">NT$ 2000/盞</div>
+                <button class="btn btn-outline add-item" data-id="family" data-name="全家福平安燈" data-price="2000">加入</button>
+            </article>
+        </div>
+    </section>
+
+    <!---------------------------------------------------- 表單 + 購物清單 ---------------------------------------------------------->
+    <section id="form" class="section section-accent">
+        <div class="container two-col">
+            <div>
+                <h3 class="sec-title">善信大德資料</h3>
+
+                <form id="offer-form" novalidate autocomplete="off">
+                    <div class="form-grid">
+                        <!-- 姓名 -->
+                        <label class="input">姓名<span class="required" >(必填)</span>
+                        <input type="text" id="name" name="name" class="input-name" placeholder="請輸入姓名" required autocomplete="name">
+                        </label>
+                        <!-- 性別 -->
+                        <div class="gender-group" aria-label="性別">
+                            <label><input type="radio" name="gender" value="善男" required autocomplete="sex"> 善男</label>
+                            <label><input type="radio" name="gender" value="信女" autocomplete="sex"> 信女</label>
+                        </div>
+
+                        <!-- 出生年月日 -->
+                        <label for="year" class="dob-label">出生年月日</label>
+                        <div class="dob-row year-row">
+                            <div class="dob-item">
+                                <span>西元年：</span>
+                                <select id="year" name="year" class="date-select year" autocomplete="bday-year"></select>
+                            </div>
+
+                            <div class="dob-row">
+                                <div class="dob-item">
+                                    <span>月：</span>
+                                    <select id="month" name="month" class="date-select month" autocomplete="bday-month"></select>
+                                </div>
+
+                                <div class="dob-item">
+                                    <span>日：</span>
+                                    <select id="day" name="day" class="date-select day" autocomplete="bday-day"></select>
+                                </div>
+
+                                <div class="dob-item">
+                                    <span>時辰：</span>
+                                    <select id="hour" name="hour" class="date-select hour" autocomplete="off"></select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 顯示結果（國曆＋農曆＋生肖＋時辰） -->
+                        <label class="input">日期資訊</label>
+                        <div id="result" class="muted">請輸入日期</div>
+
+                        <!-- 隱藏欄位，送到 Google 試算表（國曆+農曆+生肖+時辰字串） -->
+                        <input type="hidden" name="birthday_info" id="birthday_info">
+
+                        <!-- 聯絡資料 -->
+                        <label class="input">聯絡電話<span class="required">(必填)</span>
+                        <div class="phone-group">
+                        <!-- 國家選擇 (預設台灣) -->
+                        <select id="countryCode" name="countryCode" class="country" required aria-label="國家代碼" autocomplete="country-code">
+                        <option value="" disabled selected hidden>請選擇國家</option> <!-- 隱藏空選項 -->       
+                        <option value="+886">台灣 +886</option>
+                        <option value="+86">中國 +86</option>
+                        <option value="+852">香港 +852</option>
+                        <option value="+81">日本 +81</option>
+                        <option value="+1">美國 +1</option>
+                        <option value="">其他國家 </option>
+                        </select>
+                            <!-- 電話輸入 -->
+                            <input type="tel" id="phone" name="phone" class="phone" placeholder="請輸入電話" aria-describedby="phoneError" autocomplete="tel">
+                            <span id="phoneError" class="error-msg" ></span>
+                        </div>
+                        </label>
+
+                        <!-- 隱藏欄位，送到 Google 試算表 -->
+                        <input type="hidden" name="phone_info" id="phone_info">
+
+                        <!-- 電子郵件 -->
+                        <label class="input">電子郵件<span class="required">(必填)</span>
+                            <input type="email" id="email" name="email" class="mail-group" placeholder="example@mail.com" required autocomplete="email">
+                            <span id="emailError" class="error-msg"></span>
+
+                        <!-- Line ID -->
+                        <label class="input" for="line_id">LINE_ID<span class="required">(必填)</span>
+                            <input type="line_id" id="line_id" name="line_id" class="line-group" placeholder="請輸入LINE_ID" required autocomplete="line">
+                           
+
+                                       
+                        <!-- 通訊地址 -->
+                        <label class="input">通訊地址<span class="required">(必填)</span></label>
+                        <!-- 新增國家欄位 -->
+                        <div class="address-group">
+                            <select id="countrySelect" name="country" class="input-group" required autocomplete="country">
+                              <option value=""disabled hidden>請選擇國家</option>
+                              <option value="TW" selected>台灣 Taiwan</option>
+                              <option value="CN">中國 China</option>
+                              <option value="HK">香港 Hong Kong</option>
+                              <option value="JP">日本 Japan</option>
+                              <option value="US">美國 USA</option>
+                              <option value="OTHER">其他國家</option>
+                        </select>
+
+                            <!-- 台灣專用 -->
+                            <div id="taiwanAddress" class="address-group">
+                                <select id="citySelect" name="city" class="input-group" required autocomplete="address-level2">
+                            <option value="">選擇縣市</option>
+                        </select>
+                                <select id="districtSelect" name="district" class="input-group" required autocomplete="address-level3">
+                            <option value="">選擇區/鄉/鎮</option>
+                        </select>
+                                <!-- 詳細地址 -->
+                                <input type="text" name="detail" placeholder="詳細地址" class="input-group" required autocomplete="street-address">
+                            </div>
+                            <!-- 國外專用欄位 -->
+                            <div class="address-group">
+                                <input type="text" id="foreignAddress" name="foreignAddress" placeholder="國外地址 (中/英文填寫)" class="input-group" style="display:none;" autocomplete="street-address">
+                            </div>
+
+                        </div>
+
+                        <!-- 到期通知 -->
+                        <label class="input">到期通知<span class="required">(必填)</span></label>
+                        <select name="notice" class="inform" required autocomplete="off">   
+                        <option value="通知">通知</option>
+                        <option value="不通知">不通知</option>
+                        </select>
+
+                        <!-- 備註 -->
+                        <label class="input">備註</label>
+                        <textarea name="remark" class="remark-group" required autocomplete="off"></textarea>
+
+
+
+                        <!-- 繳費方式、驗證碼、服務條款等，保持原本結構即可 -->
+                        <fieldset class="fieldset">
+                            <!-- <legend>用途：為 <fieldset> 提供標題或說明文字。 -->
+                            <legend>繳費方式<span class="required">(擇一)</span></legend>
+                            <ul class="paylist" role="radiogroup" aria-label="付款方式">
+
+                                <li class="payitem">
+                                    <label>
+                                        <input type="radio" id="pay_credit" name="pay" value="線上刷卡" required autocomplete="off">線上刷卡<img src="images/credit.svg" alt="線上刷卡"></label>
+                                </li>
+                                <li class="payitem">
+                                    <label><input type="radio" id="pay_linepay" name="pay" value="LinePay" autocomplete="off">LINE Pay<img src="images/LinePay.svg" alt="LinePay"></label>
+                                </li>
+                                <li class="payitem">
+                                    <label><input type="radio" id="pay_store" name="pay" value="超商繳費" autocomplete="off">超商繳費<img src="images/store.svg" alt="超商繳費"></label>
+                                </li>
+                                <li class="payitem">
+                                    <label><input type="radio" id="pay_atm" name="pay" value="ATM 轉帳" autocomplete="off">ATM 轉帳<span class="required">(單筆金額上限為49,999元)</span><img src="images/ATM.svg" alt="ATM轉帳"></label>
+                                </li>
+                                <li class="payitem">
+                                    <label><input type="radio" id="pay_onsite" name="pay" value="現場繳費" autocomplete="off">現場繳費</label>
+                                </li>
+                            </ul>
+                            <div id="payError" class="error-text"></div>
+                            <div id="payHint" class="pay-hint" aria-live="polite"></div>
+                            <!--ATM 帳號說明區塊」（預設隱藏） -->
+                            <div id="atmInfo" class="atm-info" aria-live="polite">
+                                <h4>ATM 轉帳資訊</h4>
+                                <ul>
+                                    <li>銀行代碼：<strong>005</strong></li>
+                                    <li>銀行名稱：<strong>臺灣土地銀行(沙鹿分行1138)</strong></li>
+                                    <li>轉帳帳號：<strong>113-001-015884</strong></li>
+                                    <li class="note">※ 請於一週內完成轉帳，逾期訂單將自動取消</li>
+                                </ul>
+                            </div>
+
+
+                            <!-- 驗證碼 -->
+                            <label class="input">驗證碼<span class="required">(必填)</span></label>
+                            <div class="captcha">
+                                <canvas id="captchaCanvas" width="140" height="46" aria-hidden="true"></canvas>
+                                <input type="text" id="captchaInput" name="captcha" placeholder="請輸入驗證碼" class="captcha-input" maxlength="4" autocomplete="off" inputmode="text" />
+                                <button type="button" id="refreshCaptcha" class="refresh-btn" aria-label="重新產生驗證碼">↻</button>
+                            </div>
+                            <div id="captchaError" class="error-text"></div>
+
+
+                            <!-- 勾選服務條款 -->
+                            <div class="terms-box">
+                                <label class="agree">
+                                        <!-- 初始 disabled，使用者不能勾選 -->
+                                            <input type="checkbox" id="agreeChk" disabled required autocomplete="off">
+                                            <span>我已詳細閱讀並接受<a href="#" id="termsLink">服務條款</a></span>
+                                    </label>
+                                <!-- 條款錯誤訊息 -->
+                                <div id="agreeError" class="error-text"></div>
+                            </div>
+
+
+                            <!-- 送出按鈕 -->
+                            <div class="disclaimer">*送出後我們將以簡訊/Email 與您確認燈位與繳費資訊。資料僅作為點燈與開立收據之用。</div>
+                            <button class="btn btn-primary" type="submit">送出登記</button>
+                            <!-- <button class="btn btn-outline" type="button" id="clearDraft">清除草稿</button> -->
+
+                            <!-- 成功提示訊息 -->
+                            <div id="successMessage" class="success-msg" role="status" aria-live="polite" hidden>✅ 登記成功！感謝您的填寫！</div>
+                        </fieldset>
+                    </div>
+                </form>
+            </div>
+
+
+            <!-- <aside>：語意標籤，表示與主內容相關的側邊欄或附屬區塊。 -->
+            <aside class="cart">
+                <h4>已選燈種</h4>
+                <!-- <ul>：無序列表，用來放購物車項目（<li>） -->
+                <!--aria-live="polite" 無障礙屬性（ARIA）。 當內容變動時（例如新增或刪除商品），螢幕閱讀器會「禮貌地」讀出更新內容。 -->
+                <ul id="cart-list" class="cart-list" aria-live="polite"></ul>
+                <!-- 購物車總計 -->
+                <div class="cart-total">
+                    <!-- 這一行顯示「小計」金額。 -->
+                    <div>小計 <span id="subtotal">NT$ 0</span></div>
+                    <!-- 顯示「香油錢／手續費」等額外費用。span id="fee" 是費用數字的更新位置。 -->
+                    <!-- <div class="muted">香油/手續等：<span id="fee">NT$ 0</span></div> -->
+                    <!-- 水平線（horizontal rule），用來做區隔。 -->
+                    <hr />
+                    <!-- 顯示最後的「總計金額」 -->
+                    <div class="grand">總計 <span id="grand">NT$ 0</span></div>
+                </div>
+
+                <div class="cart-help muted">點下「加入」可新增燈位；在下方可調整數量或移除。</div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- 服務條款 Modal -->
+    <div id="termsModal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <button class="close" id="termsClose" aria-label="關閉">×</button>
+            <!-- <span class="close">&times;</span> -->
+            <div class="terms-body">
+                <h2>服務條款_代天巡狩府登記須知：</h2>
+                <!-- 長條示範內容 -->
+                <p>1. 請務必確認登記資料是否正確，服務成立則無法更改感謝狀內容。</p>
+                <p>2. 如登記資料有異動，請盡速聯絡服務人員協助更改，但感謝狀內容無法更改。</p>
+                <p>3. 完成線上點燈付款後，上燈日，依廟方祭典科儀決定。</p>
+                <p>4. 完成線上捐款後，我們將立刻進行油香登記。</p>
+                <p>5. 超商繳費付款後，7天才會入帳建立服務，如緊急或有期限要求，請斟酌選擇。如需快速申請，可選擇其他付款方式。</p>
+                <p>6. 超商繳費付款需負擔20元金流手續費。</p>
+                <p>-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+                <p>退款須知及糾紛處理方式：</p>
+                <p>1. 如登記後，有任何疑問或需退款，請來電與本廟聯繫。</p>
+                <p>2. 線上點燈屬於依消費者要求所為之客製化產品，無7天猶豫期之適用，請詳加確認後再購買。</p>
+                <p>3. 退款方式：</p>
+                <p>●使用信用卡付款者，於退款成功後，退刷至您付款的信用卡帳戶中。</p>
+                <p>●使用LinePay付款者，於退款成功後，退款至您付款的LinePay帳戶中。</p>
+                <p>●使用超商付款及線上匯款ATM者，與本廟聯繫確認退款事宜。</p>
+                <p>4. 代天巡狩府聯絡方式：</p>
+                <p>電話：(04)2656-5669 </p>
+                <p>Email: dsg5wang0213@gmail.com</p>
+                <p>地址：台中市清水區信義一街212號</p>
+                <p>-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+                <p>代天巡狩府隱私權政策：</p>
+                <p>「代天巡狩府」(以下稱本宮)非常尊重您的隱私權，因此制訂了隱私權保護政策，您可參考下列隱私權保護政策及個人資料保護法規定，蒐集、利用、處理與保護您個人的資料，希望您在使用本平台前，能夠詳細閱讀下列本站就個人資料蒐集、告知及隱私權保護政策。 </p>
+                <p>本宮將遵守以下的個人資料保護準則： 信眾在本宮線上服務項目(https://www.DSG5WANG.org.tw/)所填寫的個人資料，以及本網站經由正當程序向第三方取得而保有的個人資料，僅用於向信眾說明以及與服務有關的行為。未經信眾同意，本網站不會將其個人資料公開。</p>
+
+                <p>●信眾資料蒐集與目的：</p>
+                <p>1.信眾資料蒐集之管道：在您使用本宮之服務時，本宮將蒐集您及被祈福者的個人資料並妥善保存，不將您的資料揭露給他人。</p>
+                <p>2.信眾資料蒐集之種類：針對使用服務之信眾，我們會詢問您的姓名、連絡電話、寄送地址，並因應點燈祈福作業所需，我們會需要取得並留存點燈之姓名、出生年月日、居住地址與點燈燈種。</p>
+                <p>3.信眾資料蒐集之利用目的：您所提供之個人資料(包括您本身個人資料)，我們除使用於包含但不限於點燈祈福登記信眾服務及活動與其他信眾管理外，亦將利用於辨識身分、金流服務、物流服務、活動通知、信眾資料分析等。</p>
+                <p>●資訊分享與揭露</p>
+                <p>除非事前經過您的同意，本廟並不會將您的個人資料任意提供或洩漏予第三人，但下列狀況則不在此限制內：</p>
+                <p>1. 為提供本網站服務可能需要與第三人合作，例如：寄送商(贈)品、通知、帳單等，本宮有權利將您的個人資訊，在必要範圍內提供予簽訂保密協定之第三人。</p>
+                <p>2.在法院、檢察署、警察機關等公務機關執行法定職務或非公務機關履行法定義務必要範圍內。</p>
+                <p>3. 在必要的狀況下，本宮得將信眾的個人資訊給第三者，以利偵查或防範可能發生之非法行為，或是避免任何違反交易條款或隱私權政策之行為發生。</p>
+                <p>4. 其他依法律規定，保護本宮之權益，或為協助公務、非公務機關之必要範圍內。</p>
+                <p>-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+                <p>信眾就其個人資料，享有的權利種類及行使方式：</p>
+                <p>(A)權利種類如下：</p>
+                <p>1.查詢或請求閱覽。</p>
+                <p>2.請求製給複製本。</p>
+                <p>3.請求補充或更正。</p>
+                <p>4.請求停止蒐集、處理或利用。</p>
+                <p>5.請求刪除。但為保障您的權益而衷心提醒您：若要求刪除已交付本宮的所有個人資料時，即必須終止並無法再繼續使用本宮所提供之服務。</p>
+                <p>(B)行使方式：信眾就其登記之個人資料，可來電話(04)2656-5669洽詢本宮服務處。向本宮查詢、申請提供閱覽或製給複製本者，將於30日內辦理完畢，並酌收必要成本費用；若未能於30日內處理完畢，將以書面方式告知原因。</p>
+                <p>前述之申請，應填具申請文件，並由本人親自提出，本宮得向本人請求提示可資確認身分之證明文件。若委託他人代為申請者，應出具委任書，並提供本人及代理人之身分證明文件。信眾可在本網站輸入個人手機及訂單編號，俾便查閱個人資料檔案。若委託他人代為登入者，委任人本人將負完全的責任。</p>
+
+                <button id="agreeBtn" class="btn">我已閱讀並同意</button>
+            </div>
+            <!-- ✅ 關閉 terms-body -->
+        </div>
+        <!-- ✅ 關閉 modal-content -->
+    </div>
+    <!-- ✅ 關閉 termsModal -->
+
+    <!-- FAQ -->
+    <section id="faq" class="section container">
+        <h3 class="sec-title">常見問題</h3>
+        <details class="faq">
+            <summary>點燈期限與更換日期？</summary>
+            <p>本宮採全年祈福；如遇年度更替，將主動續燈通知或網站公告。</p>
+        </details>
+        <details class="faq">
+            <summary>收據如何開立？</summary>
+            <p>可開立紙本或電子收據，請於地址或備註中註明抬頭與統編。</p>
+        </details>
+        <details class="faq">
+            <summary>無法前來安奉？</summary>
+            <p>可代為安奉與上表，完成後以簡訊/Email 回傳照片或號碼。</p>
+        </details>
+    </section>
+
+    <!-- 頁尾 -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <div class="brand-mini">台中清水代天巡狩府·孝恩之廟</div>
+                <div class="muted">地址：台中市清水區信義一街212號｜電話：(04) 2656-5669</div>
+            </div>
+            <div class="muted">© <span id="footerYear"></span> 台中清水代天巡狩府·孝恩之廟．祈福平安</div>
+        </div>
+    </footer>
+
+    <!-- 確認 Dialog -->
+
+    <dialog id="confirm-dialog" class="modal">
+        <form method="dialog" class="modal-card" id="confirm-form">
+            <h5>送出前確認</h5>
+            <div id="confirm-body" class="confirm-body"></div>
+            <menu class="modal-actions">
+                <button type="button" value="cancel" class="btn btn-outline" id="confirmCancel">返回修改</button>
+                <button type="button" value="submit" class="btn btn-primary" id="confirmSubmit">確認送出</button>
+            </menu>
+        </form>
+    </dialog>
+
+    <!-- 成功 Dialog -->
+    <dialog id="success-dialog" class="modal">
+        <div class="modal-card">
+            <h5>已送出</h5>
+            <p>感謝您的登記！訂單編號：<strong id="order-id"></strong></p>
+            <p class="muted">我們將盡速與您聯繫確認燈位與繳費方式。</p>
+            <menu class="modal-actions">
+                <button class="btn btn-primary" id="success-close">完成</button>
+            </menu>
+        </div>
+    </dialog>
+
+    <script src="js/app.js" defer></script>
+    <script src="js/address.js"></script>
+    <script src="js/birthday.js"></script>
+
+    <script src="js/email.js"></script>
+
+</body>
+
+</html>
