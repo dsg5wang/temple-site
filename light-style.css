@@ -1,0 +1,1874 @@
+/* ===============================
+light-style.css
+傳統紅金宮廟風格（文鼎勘亭流 + 翩翩體）
+================================*/
+
+
+/* 綜合功能 */
+
+body {
+    margin: 0;
+    font-family: "Noto Serif TC", ui-serif, serif;
+    line-height: 1.45;
+    color: var(--ink);
+    background: radial-gradient(circle at 10% 0%, rgba(202, 168, 87, .1), transparent 45%), url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'><defs><pattern id='p' width='60' height='60' patternUnits='userSpaceOnUse'><path d='M0 30 Q 15 0 30 30 T 60 30' fill='none' stroke='%23d7c9a3' stroke-width='1' opacity='.35'/></pattern></defs><rect width='100%' height='100%' fill='%23f7f3ea'/><rect width='100%' height='100%' fill='url(%23p)'/></svg>") repeat;
+    background-size: auto, 240px 240px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* 容器 */
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px
+}
+
+*/
+/* 國曆 ↔ 民  */
+
+.brand-title,
+.sec-title {
+    font-family: "TempleBrush", "Noto Serif TC", serif;
+}
+
+
+/* ========================================================
+0. :root 變數定義
+======================================================== */
+
+ :root {
+    --bg: #f7f3ea;
+    /* 頁面背景色 (淺米色) */
+    --paper: #fffaf0;
+    /* 紙張感背景 (象牙白) */
+    --ink: #2b2118;
+    /* 文字墨色 (深咖啡/墨黑) */
+    --red: #b20a0a;
+    /* 鮮紅色 (強調/警示) */
+    --gold: #caa857;
+    /* 金色 (偏亮，裝飾用) */
+    --gold-deep: #a48635;
+    /* 深金色 (hover/層次) */
+    --muted: #7a6f64;
+    /* 次要文字色 (灰褐色) */
+    --ring: rgba(202, 168, 87, .35);
+    /* 半透明金色 */
+}
+
+
+/* ========================================================
+1. 字體載入
+======================================================== */
+
+@font-face {
+    font-family: 'KangTingLiu';
+    /* 文鼎勘亭流 (主標題) */
+    src: url('fonts/KangTingLiu.woff2') format('woff2'), url('fonts/KangTingLiu.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PienPien';
+    /* 翩翩體 (次標題) */
+    src: url('fonts/PienPien.woff2') format('woff2'), url('fonts/PienPien.ttf') format('truetype');
+    font-display: swap;
+}
+
+
+/* ========================================================
+2.全站通用樣式
+======================================================== */
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    margin: 0;
+    height: 100%;
+    font-family: "Noto Serif TC", ui-serif, serif;
+    line-height: 1.45;
+    color: var(--ink);
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: radial-gradient(circle at 10% 0%, rgba(202, 168, 87, .1), transparent 45%), url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'><defs><pattern id='p' width='60' height='60' patternUnits='userSpaceOnUse'><path d='M0 30 Q 15 0 30 30 T 60 30' fill='none' stroke='%23d7c9a3' stroke-width='1' opacity='.35'/></pattern></defs><rect width='100%' height='100%' fill='%23f7f3ea'/><rect width='100%' height='100%' fill='url(%23p)'/></svg>") repeat;
+    background-size: auto, 240px 240px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+
+/* 標題字體 */
+
+.brand-title,
+.sec-title {
+    font-family: 'KangTingLiu', "Noto Serif TC", serif;
+}
+
+
+/* ========================================================
+3. Header + Nav
+======================================================== */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(6px);
+    background: rgba(247, 243, 234, .7);
+    border-bottom: 1px solid #e8e0cf;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .75rem 1rem;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    display: flex;
+    align-items: center;
+    /* 垂直置中對齊 */
+    justify-content: center;
+    /* 水平置中對齊 */
+    gap: 12px;
+    /* Logo 與標題間距 */
+}
+
+.logo-mark {
+    font-size: 1.25rem;
+    color: var(--gold-deep)
+}
+
+.logo-icon {
+    height: 140px;
+    width: 140px;
+    object-fit: contain;
+}
+
+.brand-title {
+    font-size: 2.4rem;
+    color: var(--red);
+    font-weight: 800;
+    font-family: sans-serif;
+    text-align: center;
+    text-shadow: 1px 1px 3px #000;
+    display: inline-block;
+}
+
+.brand-sub {
+    font-size: 1.2rem;
+    color: var(--muted);
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.site-nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.site-nav a {
+    color: var(--ink);
+    text-decoration: none;
+    margin-left: 1rem;
+    font-size: .95rem;
+}
+
+.site-nav a:hover {
+    color: var(--red);
+}
+
+
+/* ========================================================
+4. Main / Banner
+======================================================== */
+
+.main-section {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background: linear-gradient(180deg, rgba(178, 10, 10, .08), rgba(0, 0, 0, 0) 40%), url('https://images.unsplash.com/photo-1542116023-8f013e6c1d4a?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat;
+    color: #fff;
+}
+
+.main-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, .35), rgba(0, 0, 0, .15));
+    z-index: -1;
+}
+
+.section-inner {
+    padding: 72px 16px;
+    max-width: 1000px;
+    margin: auto
+}
+
+.section-title {
+    font-size: clamp(1.5rem, 4vw, 2.4rem);
+    margin: 0 0 .25rem;
+    letter-spacing: .15em
+}
+
+.section-desc {
+    margin: .25rem 0 1rem;
+    opacity: .9
+}
+
+.section .btn-primary {
+    --bgc: var(--red)
+}
+
+.section-decor {
+    height: 6px;
+    background: linear-gradient(90deg, transparent, var(--gold) 30%, var(--gold-deep), var(--gold) 70%, transparent);
+}
+
+
+/* ========================================================
+5. Section 區塊 & 標題
+======================================================== */
+
+.section {
+    padding: 56px 16px;
+}
+
+.section-accent {
+    background: var(--paper);
+    border-block: 1px solid #eee2c6
+}
+
+.sec-title {
+    font-size: 1.4rem;
+    letter-spacing: .05em;
+    color: var(--red);
+    margin: 0 0 1rem;
+    border-left: 6px double var(--gold);
+    padding-left: .75rem;
+}
+
+
+/* ========================================================
+6. Cards 卡片
+======================================================== */
+
+.grid.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #eadfc3;
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .04);
+    position: relative;
+}
+
+.card h4 {
+    margin: .25rem 0 .5rem;
+    letter-spacing: .15em
+}
+
+.card .card-desc {
+    color: var(--muted);
+    margin: 0 0 .75rem
+}
+
+.card-price {
+    font-weight: 700;
+    color: var(--gold-deep);
+    margin-bottom: .75rem
+}
+
+.card .btn {
+    width: 100%
+}
+
+
+/* 燈籠搖擺動畫 */
+
+
+/* ========================================燈籠設計========================================= */
+
+.card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    transform-origin: top center;
+    /* 搖擺的軸心在圖片上方中間 */
+}
+
+
+/* 滑鼠移到卡片 */
+
+.card:hover {
+    transform: translateY(-8px);
+    /* 卡片浮起 */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* 定義燈籠搖擺動畫 */
+
+@keyframes swing {
+    0% {
+        transform: rotate(0deg) scale(1.05);
+    }
+    25% {
+        transform: rotate(3deg) scale(1.05);
+    }
+    50% {
+        transform: rotate(0deg) scale(1.05);
+    }
+    75% {
+        transform: rotate(-3deg) scale(1.05);
+    }
+    100% {
+        transform: rotate(0deg) scale(1.05);
+    }
+}
+
+
+/* 滑鼠移到卡片時，圖片同時放大並搖擺 */
+
+.card:hover .card-img {
+    animation: swing 1s ease-in-out infinite;
+}
+
+
+/* ========================================================
+7. Layout: two-col / form-grid
+======================================================== */
+
+.two-col {
+    display: grid;
+    /* 使用 Grid 佈局 */
+    gap: 24px;
+    /* 欄與欄之間、列與列之間的間距 24px */
+    grid-template-columns: 1.2fr .8fr
+    /* 定義兩欄，比例為 1.2 : 0.8 */
+}
+
+@media (max-width: 900px) {
+    .two-col {
+        grid-template-columns: 1fr
+    }
+}
+
+.form-grid {
+    display: grid;
+    /* 啟用 Grid 佈局 */
+    gap: 12px 16px;
+    /* 行距12px，列距16px */
+    grid-template-columns: 1fr;
+    /* 一欄式 */
+    align-items: center;
+    /* 垂直置中 */
+}
+
+
+/* ========================================================
+8. Form 表單 & 驗證
+======================================================== */
+
+.input {
+    display: inline-block;
+    flex-direction: column;
+    gap: .35rem;
+    font-weight: bold;
+    margin-top: 15px;
+    color: var(--muted);
+    margin-left: 1px;
+}
+
+.input input,
+.input select,
+.input textarea {
+    display: block;
+    width: 100%;
+    /* 佔滿容器寬度 */
+    padding: .6rem .8rem;
+    /* 內距：上下 0.6rem，左右 0.8rem */
+    border-radius: 10px;
+    /* 圓角邊框 (10px) */
+    border: 1px solid #e4d7b4;
+    /* 淺金色邊框 */
+    background: #fff;
+    /* 白底 */
+    outline: none;
+    /* 移除瀏覽器預設的外框 */
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, .02);
+    /* 內陰影，製造輕微凹陷感 */
+    display: block;
+    /* 輸入框換行 */
+    margin-top: 4px;
+    /* 標籤與輸入框間距 */
+    max-width: 240px;
+    /* 輸入框寬度，可調整 */
+}
+
+.input input:focus,
+.input select:focus,
+.input textarea:focus {
+    /* :focus = 使用者點擊或輸入時的狀態。 */
+    border-color: var(--gold);
+    /* 聚焦時邊框顏色改成主題金色 */
+    box-shadow: 0 0 0 4px var(--ring);
+    /* 在輸入框外圍加上柔和的光暈框，增強互動感。 額外外圈光暈效果 (4px) */
+}
+
+
+/* 錯誤與正確視覺化 */
+
+.invalid {
+    border-color: #d9534f !important;
+    box-shadow: 0 0 6px rgba(217, 83, 79, 0.12) !important;
+}
+
+.valid {
+    border-color: #eee2c6 !important;
+    box-shadow: 0 0 6px rgba(40, 167, 69, 0.12) !important;
+}
+
+.error-msg {
+    color: #d9534f;
+    font-size: 14px;
+    margin-top: 14px;
+    min-height: 18px;
+    text-align: center;
+    /* 保持版面穩定 */
+}
+
+
+/* ========================================================
+9. Canvas 驗證碼
+======================================================== */
+
+canvas {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #f5f5f5;
+    cursor: pointer;
+}
+
+#captchaCanvas {
+    border: 2px dashed #999;
+    border-radius: 8px;
+    background: #f9f9f9;
+    cursor: pointer;
+}
+
+
+/* 輸入框 */
+
+.captcha-input {
+    height: 42px;
+    padding: 0 12px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 18px;
+    flex: 0 0 140px;
+    /* 不伸展、不縮、固定 140 */
+}
+
+.captcha .captcha-input:focus {
+    outline: none;
+}
+
+.actions {
+    position: sticky;
+    bottom: 12px;
+    z-index: 10
+}
+
+
+/* 手機版自動換行 */
+
+.captcha {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 6px;
+    flex-wrap: wrap;
+}
+
+
+/* 刷新按鈕 */
+
+.refresh-btn {
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: rgb(132, 3, 3);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    background: #8b0000;
+    color: #fff;
+    font-size: 16px;
+}
+
+
+/* ========================================================
+10.Modal / 服務條款 點擊後跳出一個視窗（Modal/彈窗） 來顯示內容 
+   Modal 背景 
+   Dialog 共用樣式
+========================================================*/
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 0;
+    padding: 0;
+    background: transparent
+}
+
+.modal-dialog {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.modal .close {
+    float: right;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.modal .close:hover {
+    color: #8b0000;
+}
+
+.refresh-btn:hover {
+    background: #ddd;
+}
+
+.refresh-btn i {
+    font-size: 20px;
+    color: #444;
+}
+
+
+/* 確認 Modal (原生 <dialog>) */
+
+.modal[aria-hidden="true"] {
+    display: none;
+}
+
+.modal::backdrop {
+    background: rgba(0, 0, 0, .35)
+}
+
+.modal-card {
+    /* min-width: min(560px, 92vw); */
+    width: 100%;
+    max-width: 1000px;
+    max-height: 80%;
+    background: #fff;
+    border-radius: 16px;
+    padding: 16px;
+    border: 1px solid #eadfc3;
+    /* 限制高度 */
+    overflow-y: auto;
+    /* 內容太長可滾動 */
+    position: relative;
+    animation: slideIn 0.3s ease-out;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-card h5,
+h6 {
+    font-size: 1rem;
+    /* 字體大小 */
+    font-weight: bold;
+    /* 字體粗細 */
+    margin: 0 0 .5rem;
+    /* 與下方內容的距離 */
+}
+
+
+/* confirm dialog content */
+
+.confirm-body {
+    max-height: 50vh;
+    overflow: auto
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 8px
+}
+
+
+/* Modal 滑動動畫 */
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* ========================================================
+11. Cart 購物車
+======================================================== */
+
+.cart {
+    background: #fff;
+    border: 1px solid #eadfc3;
+    border-radius: 14px;
+    padding: 16px;
+    /* 投影效果，提升浮動感 */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .04);
+    /* 在父容器（flex）中靠上對齊。 */
+    align-self: start;
+    /* 當頁面滾動時，購物車會固定在距上方 84px 的位置 */
+    /* position: sticky;
+    top: 84px; */
+}
+
+.cart-list {
+    list-style: none;
+    /* 移除內外距。 */
+    padding: 0;
+    margin: 0;
+    /* 以垂直排列的 flex 容器呈現每個項目。 */
+    display: flex;
+    flex-direction: column;
+    /* 每個項目之間留 10px 間距。 */
+    gap: 10px
+}
+
+.cart-item {
+    /* 使用 Grid 佈局 */
+    display: grid;
+    /* 定義四欄： 
+       1. 第一欄 1fr → 自動撐滿剩餘空間 (放商品名稱最合適) 
+       2. 第二欄 auto → 依內容寬度 (放數量調整區) 
+       3. 第三欄 auto → 依內容寬度 (放單價) 
+       4. 第四欄 auto → 依內容寬度 (放刪除按鈕) */
+    grid-template-columns: 1fr auto auto auto;
+    /* 欄位間距 */
+    gap: 8px;
+    align-items: center;
+    /* 每個 cart-item 底部加一條虛線分隔線 */
+    border-bottom: 1px dashed #eee2c6;
+    /* 內邊距：底部留 8px 間距 */
+    padding-bottom: 8px;
+}
+
+
+/* :last-child → 最後一個項目移除底線和底部間距。 */
+
+.cart-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0
+}
+
+
+/* 數量調整區/整個數量調整框 */
+
+.qty {
+    /* 水平排列按鈕和輸入框。 */
+    display: inline-flex;
+    border: 1px solid #eadfc3;
+    border-radius: 10px;
+    /* 避免按鈕溢出圓角。 */
+    overflow: hidden;
+}
+
+
+/* 減、加按鈕： */
+
+.qty button {
+    border: 0;
+    background: #fff;
+    padding: .2rem .55rem;
+    cursor: pointer
+}
+
+
+/* 數字輸入框： */
+
+.qty input {
+    width: 55px;
+    border: 0;
+    text-align: center
+}
+
+
+/* 商品價格與刪除按鈕 顯示商品價格，粗體、金色。 */
+
+.cart-price {
+    font-weight: 700;
+    color: var(--gold-deep)
+}
+
+
+/* 刪除按鈕，無邊框、透明背景、灰色、可點擊。 */
+
+.cart-remove {
+    border: 0;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer
+}
+
+
+/* 購物車總計 總計區，上方留 10px */
+
+.cart-total {
+    margin-top: 10px
+}
+
+
+/* 總金額文字，稍大字、粗體、紅色突出。 */
+
+.cart-total .grand {
+    font-size: 1.1rem;
+    font-weight: 800;
+    /* 幫助文字，上方 8px 間距。 */
+    color: var(--red)
+}
+
+
+/* 幫助文字，上方 8px 間距。 */
+
+.cart-help {
+    margin-top: 8px
+}
+
+
+/* ==================================================
+付款方式
+=====================================================*/
+
+.fieldset {
+    margin-top: 4px;
+    border-radius: 12px;
+    padding: 10px 12px;
+    border: 1px solid #e4d7b4;
+    /* 淺金色邊框 */
+    background: #fff;
+    /* 白底 */
+}
+
+.fieldset legend {
+    padding: 0 .35rem;
+    color: var(--muted)
+}
+
+.paylist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.payitem {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: rgb(0, 0, 0);
+    white-space: nowrap;
+    /* 防止換行 */
+}
+
+.payitem label {
+    display: inline-flex;
+    /* 橫向排列 */
+    align-items: center;
+    /* 垂直置中 */
+    gap: 0.5rem;
+    /* 元素間距 */
+    cursor: pointer;
+    flex-wrap: nowrap;
+    /* 不換行 */
+    text-align: left;
+    /* 文字靠左 */
+}
+
+.payitem input[type="radio"] {
+    margin: 0;
+}
+
+.payitem img {
+    width: 120px;
+    height: auto;
+}
+
+
+/* ==================================================
+服務條款terms-box 外觀
+=====================================================*/
+
+.terms-box {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-top: 16px;
+    background: #f9f9f9;
+    transition: border-color 0.2s;
+}
+
+
+/* 有錯誤時的樣式 */
+
+.terms-box.is-invalid {
+    border-color: #dc3545;
+    background: #fff5f5;
+}
+
+.terms-box.is-invalid .invalid-feedback {
+    display: block;
+}
+
+
+/* checkbox + 文字 */
+
+.agree {
+    display: flex;
+    align-items: center;
+    /* 垂直置中 */
+    gap: 6px;
+    /* 勾選框與文字間距 */
+    font-size: 16px;
+    cursor: pointer;
+    /* 滑鼠移到文字也可點擊 */
+}
+
+.agree input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+}
+
+
+/* 連結樣式 */
+
+.agree a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.agree a:hover {
+    text-decoration: underline;
+}
+
+.error-text {
+    color: #d9534f;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+
+/* ==================================================
+表單按鈕送出
+=====================================================*/
+
+.disclaimer {
+    text-align: left;
+    font-size: 14px;
+}
+
+
+/* Buttons */
+
+.btn {
+    appearance: none;
+    border: 1px solid var(--gold);
+    color: var(--ink);
+    background: #fff;
+    /* 控制按鈕大小。 */
+    padding: .7rem 1rem;
+    border-radius: 12px;
+    /* 滑鼠移到按鈕時顯示手指圖示。 */
+    cursor: pointer;
+    /* 設定動畫過渡效果，對 transform 和 box-shadow 變化時平滑 0.2 秒。 */
+    transition: .2s transform, .2s box-shadow;
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+
+.btn:hover {
+    /* 按鈕向上移動 1px，看起來有「浮起」效果。 */
+    transform: translateY(-1px);
+    /* 加上淡淡陰影，增加立體感。 */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .06)
+}
+
+.btn:active {
+    transform: none
+    /* :active 是按下按鈕時的狀態。transform: none;
+取消浮起效果，按鈕「回到原位」，模擬按下效果。 */
+}
+
+
+/* 主要按鈕的樣式 */
+
+.btn-primary {
+    /* color: #fff; 文字白色。
+background: var(--red); 背景紅色（使用 CSS 變數 --red）。
+border-color: var(--red); 邊框也改成紅色。 */
+    color: #fff;
+    background: var(--red);
+    border-color: var(--red);
+    font-size: 1rem;
+    width: 100px;
+    /* 固定寬度 */
+    height: 50px;
+    /* 固定高度 */
+    /* 上下 1rem，左右 2rem，按鈕變大 */
+}
+
+.btn-primary:hover {
+    background: #a40000;
+}
+
+
+/* 外框按鈕（Outline button）的樣式add-item */
+
+.btn-outline {
+    background: #fff;
+    color: var(--red);
+    border-color: var(--red)
+}
+
+
+/* 成功提示訊息 */
+
+#successMessage {
+    display: none;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+
+/* 錯誤提示 */
+
+.invalid-feedback {
+    display: none;
+    font-size: 13px;
+    color: #dc3545;
+    margin-top: 6px;
+}
+
+
+/* ==================================================
+服務條款 Modal
+=====================================================*/
+
+dialog[open] {
+    display: block;
+}
+
+.show-invalid .invalid-feedback {
+    display: block;
+    color: red;
+}
+
+.invalid-feedback {
+    display: none;
+}
+
+
+/* Modal 內容框 */
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 12px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 1000px;
+    max-height: 80%;
+    /* 限制高度 */
+    overflow-y: auto;
+    /* 內容太長可滾動 */
+    position: relative;
+    animation: slideIn 0.3s ease-out;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content p {
+    line-height: 18px;
+    /* 文字行距*/
+    margin-bottom: 10px;
+    /* 段落之間增加間距 */
+}
+
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+#termsModal {
+    display: none;
+    /* 預設隱藏 */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    animation: fadeIn 0.3s;
+}
+
+
+/* 按鈕置中 */
+
+#agreeBtn {
+    display: block;
+    margin: 20px auto;
+    /* 左右自動，置中 */
+    padding: 10px 20px;
+    background: #c00;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+
+/* 關閉按鈕 */
+
+.close {
+    position: absolute;
+    /* 絕對定位在父元素右上角 */
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+    background-color: #f1f1f1;
+    padding: 5px 10px;
+    border-radius: 0 8px 0 0;
+}
+
+
+/* 滾動條美化（支援 Chrome/Edge/Firefox） */
+
+.close:hover {
+    color: #8b0000;
+}
+
+
+/* ==================================================
+常見問題 FAQ
+=====================================================*/
+
+.faq {
+    background: #fff;
+    border: 1px solid #eadfc3;
+    border-radius: 12px;
+    padding: 10px 12px;
+    margin-bottom: 10px
+}
+
+.faq summary {
+    cursor: pointer
+}
+
+
+/* ==================================================
+網頁 頁尾footer
+=====================================================*/
+
+.site-footer {
+    padding: 28px 16px;
+    background: #1f1a15;
+    color: #e8dcc6
+}
+
+.footer-grid {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr auto
+}
+
+.brand-mini {
+    letter-spacing: .8em;
+    color: #f5e6b8;
+    font-size: 16px;
+}
+
+
+/* ==================================================
+導覽列加入Facebook、YouTube、LINE、TikTok 圖示。
+中文繁體字體
+=====================================================*/
+
+
+/* 社群圖示樣式 */
+
+.social-icons {
+    position: fixed;
+    /* 固定在畫面上 */
+    top: 20px;
+    /* 與畫面上緣距離 */
+    right: 20px;
+    /* 與畫面右緣距離 */
+    display: flex;
+    gap: 15px;
+    z-index: 9999;
+    /* 確保不被蓋住 */
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease;
+}
+
+.social-icon i {
+    color: #ffffff;
+    font-size: 18px;
+    /* 圖示白色 */
+}
+
+.social-icon:hover {
+    transform: scale(1.15);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    filter: brightness(1.1);
+}
+
+
+/* 自訂每個平台顏色 */
+
+.facebook {
+    background-color: #3b5998;
+}
+
+.youtube {
+    background-color: #ff0000;
+}
+
+.line {
+    background-color: #00c300;
+}
+
+.tiktok {
+    background-color: #000000;
+}
+
+
+/*******************************設計卡片式功能區塊是卡片設計（Card UI）使用 Grid + Flexbox**********************************************************/
+
+
+/* ==================================================
+性別選項
+=====================================================*/
+
+.gender-group {
+    display: flex;
+    gap: 12px;
+    /* 性別選項間距 */
+    flex-wrap: wrap;
+    /* 小螢幕換行 */
+}
+
+
+/* 善男/信女字體、大小、顏色 */
+
+.gender-group label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    /* 圓圈與文字間距 */
+    font-size: 16px;
+    /* 調整文字大小 */
+    color: #5b3921;
+    /* 文字顏色 */
+}
+
+.gender-group input[type="radio"] {
+    transform: scale(1.2);
+    /* 放大圓圈 */
+    margin: 0;
+    /* 移除預設 margin */
+}
+
+
+/* ==================================================
+出生年月日
+生日顯示 
+=====================================================*/
+
+#result {
+    margin-top: 1px;
+    font-size: 16px;
+    line-height: 1.6em;
+    background: #fff8dc;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    white-space: pre-line;
+    /* 保留換行 */
+}
+
+.dob-label {
+    display: block;
+    font-size: 16px;
+    /* color: #333; */
+    margin-bottom: 2px;
+    color: var(--muted);
+    font-weight: bold;
+}
+
+.dob-row {
+    display: flex;
+    flex-wrap: wrap;
+    /* 小螢幕會自動換行 */
+    gap: 10px;
+    /* 每個欄位間距 */
+    align-items: center;
+    margin-bottom: 1px;
+    margin-top: 2px;
+}
+
+.dob-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.dob-item span {
+    margin-right: 6px;
+    white-space: nowrap;
+}
+
+
+/* 國曆 ↔ 民國 ↔ 農曆 即時查詢 */
+
+.date-select {
+    background-color: #fff;
+    /* 背景白色 */
+    color: #333;
+    /* 字體顏色 */
+    width: auto;
+    /* 隨文字長度調整 */
+    max-width: 220px;
+    min-width: 80px;
+    /* 不會太窄 */
+    border: 1px solid #d4af37;
+    /* 淺金色邊框 */
+    font-size: 16px;
+    width: 100%;
+    /* 佔滿容器寬度 */
+    padding: .6rem .8rem;
+    /* 內距：上下 0.7rem，左右 0.8rem */
+    border-radius: 10px;
+    /* 圓角邊框 (10px) */
+    border: 1px solid #e4d7b4;
+    /* 淺金色邊框 */
+    outline: none;
+    /* 移除瀏覽器預設的外框 */
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, .02);
+    /* 內陰影，製造輕微凹陷感 */
+    display: block;
+    /* 輸入框換行 */
+    margin-top: 1px;
+    /* 標籤與輸入框間距 */
+}
+
+.date-select:focus {
+    /* :focus = 使用者點擊或輸入時的狀態。 */
+    border-color: var(--gold);
+    /* 聚焦時邊框顏色改成主題金色 */
+    box-shadow: 0 0 0 4px var(--ring);
+    /* 在輸入框外圍加上柔和的光暈框，增強互動感。 額外外圈光暈效果 (4px) */
+}
+
+
+/* 不同欄位可給不同寬度 */
+
+.date-select.year {
+    width: 210px;
+}
+
+.date-select.month,
+.date-select.day {
+    width: 20px;
+}
+
+.date-select.hour {
+    width: 190px;
+}
+
+select {
+    padding: 6px 10px;
+    font-size: 16px;
+    margin: 0 5px;
+    color: #333;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+
+/* ==================================================
+電子郵件 mail 基本輸入框
+=====================================================*/
+
+#emailError {
+    color: #d9534f;
+    font-size: 14px;
+    margin-left: 8px;
+    text-align: center;
+}
+
+
+/* .mail-group {
+    padding: .4rem .6rem;
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid #e4d7b4;
+    outline: none;
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, .02);
+    margin-top: 4px;
+    width: auto;
+    box-sizing: border-box;
+} */
+
+
+/* 聚焦效果 */
+
+.mail-group:focus {
+    /* :focus = 使用者點擊或輸入時的狀態。 */
+    border-color: var(--gold);
+    /* 聚焦時邊框顏色改成主題金色 */
+    box-shadow: 0 0 0 4px var(--ring);
+    /* 在輸入框外圍加上柔和的光暈框，增強互動感。 額外外圈光暈效果 (4px) */
+}
+
+
+/* ==================================================
+通訊地址 基本輸入框
+=====================================================*/
+
+.input-group {
+    padding: .4rem .6rem;
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid #e4d7b4;
+    outline: none;
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, .02);
+    margin-top: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* 聚焦效果 */
+
+.input-group:focus {
+    /* :focus = 使用者點擊或輸入時的狀態。 */
+    border-color: var(--gold);
+    /* 聚焦時邊框顏色改成主題金色 */
+    box-shadow: 0 0 0 4px var(--ring);
+    /* 在輸入框外圍加上柔和的光暈框，增強互動感。 額外外圈光暈效果 (4px) */
+}
+
+
+/* 欄位容器水平排列與間距 */
+
+.address-group {
+    display: flex;
+    gap: 6px;
+    /* 調整欄位之間的間距 */
+    flex-wrap: wrap;
+    /* 當螢幕窄時自動換行 */
+    margin-bottom: 4px;
+}
+
+
+/* 重要：若 .input-group 在全域被設為 width:100%，在 address-group 內要覆寫 */
+
+.address-group .input-group {
+    flex: 1;
+    /* 平均分配寬度，也可改成固定寬度 */
+    width: auto;
+    /* 允許 flex 決定寬度 */
+    min-width: 120px;
+    /* 允許縮小（避免內容撐寬)*/
+}
+
+
+/* === 國家選單 === */
+
+.address-group #countrySelect {
+    flex-basis: 100%;
+    /* 獨立一列 */
+    width: 100%;
+    /* 滿版（但限制最大寬度） */
+    max-width: 160px;
+    /* 桌面不會太寬 */
+    height: 40px;
+    /* 與其他欄位統一高度 */
+    margin-bottom: 6px;
+    padding: 4px 8px;
+}
+
+
+/* 縣市 欄位比例（可自行調整）*/
+
+.address-group select[name="city"] {
+    flex: 1;
+    /* 基本佔比 */
+    min-width: 120px;
+    /* 不要太小 */
+}
+
+
+/* 區鄉鎮 */
+
+.address-group select[name="district"] {
+    flex: 1.3;
+    /* 比縣市多一點 */
+    min-width: 140px;
+}
+
+
+/* 詳細地址 */
+
+.address-group input[name="detail"] {
+    flex: 2.5;
+    /* 佔比較大 */
+    min-width: 300px;
+    /* 桌面可大一些 */
+}
+
+.address-group input[name="foreignAddress"] {
+    flex: 2.5;
+    /* 佔比較大 */
+    min-width: 350px;
+    /* 桌面可大一些 */
+}
+
+
+/* 台灣地址/國外地址仍維持彈性排列 */
+
+#foreignAddress {
+    flex-basis: 100%;
+}
+
+
+/* ==================================================
+連絡電話 基本輸入框
+=====================================================*/
+
+.country {
+    background-color: #fff;
+    /* 背景白色 */
+    color: #333;
+    /* 字體顏色 */
+    max-width: 140px;
+    /* 限制最大寬度 */
+    min-width: 40px;
+    /* 不會太窄 */
+    border: 1px solid #d4af37;
+    /* 淺金色邊框 */
+    font-size: 16px;
+    padding: .6rem .8rem;
+    /* 內距：上下 0.6rem，左右 0.8rem */
+    border: 1px solid #e4d7b4;
+    /* 淺金色邊框 */
+    border-radius: 10px;
+    /* 圓角邊框 (10px) */
+    outline: none;
+    /* 移除瀏覽器預設的外框 */
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, .02);
+    /* 內陰影，製造輕微凹陷感 */
+    display: block;
+    /* 輸入框換行 */
+    margin-top: 1px;
+    /* 標籤與輸入框間距 */
+}
+
+
+/* 國家代碼下拉式選單 */
+
+select.country {
+    width: 130px;
+    /* 下拉選單寬度 */
+}
+
+.phone-group {
+    display: flex;
+    gap: 12px;
+    align-items: left;
+    flex-wrap: wrap;
+}
+
+#phoneError {
+    width: 100%;
+    text-align: left;
+    color: #d9534f;
+    font-size: 14px;
+    margin-top: -10px;
+    display: none;
+}
+
+
+/* ==================================================
+到期通知
+=====================================================*/
+
+.inform {
+    background-color: #fff;
+    /* 背景白色 */
+    color: #333;
+    /* 字體顏色 */
+    max-width: 100px;
+    /* 限制最大寬度 */
+    min-width: 100px;
+    /* 不會太窄 */
+    border: 1px solid #d4af37;
+    /* 淺金色邊框 */
+    font-size: 16px;
+    padding: .6rem .8rem;
+    /* 內距：上下 0.6rem，左右 0.8rem */
+    border: 1px solid #e4d7b4;
+    /* 淺金色邊框 */
+    border-radius: 10px;
+    /* 圓角邊框 (10px) */
+    outline: none;
+    /* 移除瀏覽器預設的外框 */
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, .02);
+    /* 內陰影，製造輕微凹陷感 */
+    display: block;
+    /* 輸入框換行 */
+    margin-top: 1px;
+    /* 標籤與輸入框間距 */
+}
+
+.inform:focus {
+    /* :focus = 使用者點擊或輸入時的狀態。 */
+    border-color: var(--gold);
+    /* 聚焦時邊框顏色改成主題金色 */
+    box-shadow: 0 0 0 4px var(--ring);
+    /* 在輸入框外圍加上柔和的光暈框，增強互動感。 額外外圈光暈效果 (4px) */
+}
+
+
+/* 在輸入框外圍加上柔和的光暈框，增強互動感。 額外外圈光暈效果 (4px) */
+
+select.inform {
+    width: 100px;
+    /* 下拉選單寬度 */
+}
+
+
+/* ==================================================
+備註
+=====================================================*/
+
+.remark-group {
+    width: 100%;
+    max-width: 500px;
+    /* 最大寬度 */
+    height: 100px;
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    resize: horizontal;
+    margin-left: 6px;
+    box-sizing: border-box;
+    /* 讓 padding 不影響寬度 */
+}
+
+
+/* ==================================================
+小工具
+=====================================================*/
+
+.muted {
+    color: var(--muted)
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #eee2c6;
+    margin: 10px 0
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.required {
+    color: rgb(247, 68, 68);
+    margin-left: 2px;
+    font-size: 12px;
+}
+
+.input-name,
+.phone,
+.line-group {
+    font-size: 16px;
+    background-color: #fff;
+    /* 背景白色 */
+    color: #333;
+    /* 字體顏色 */
+    max-width: 120px;
+    /* 限制最大寬度 */
+    min-width: 40px;
+    /* 不會太窄 */
+    border: 1px solid #d4af37;
+    /* 淺金色邊框 */
+    padding: .6rem .8rem;
+    /* 內距：上下 0.6rem，左右 0.8rem */
+    border: 1px solid #e4d7b4;
+    /* 淺金色邊框 */
+    border-radius: 10px;
+    /* 圓角邊框 (10px) */
+    outline: none;
+    /* 移除瀏覽器預設的外框 */
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, .02);
+    /* 內陰影，製造輕微凹陷感 */
+    display: block;
+    /* 輸入框換行 */
+    margin-top: 4px;
+    /* 標籤與輸入框間距 */
+    margin-left: 2px;
+}
+
+.mail-group {
+    font-size: 16px;
+    background-color: #fff;
+    /* 背景白色 */
+    color: #333;
+    /* 字體顏色 */
+    max-width: 120px;
+    /* 限制最大寬度 */
+    min-width: 40px;
+    /* 不會太窄 */
+    border: 1px solid #d4af37;
+    /* 淺金色邊框 */
+    padding: .6rem .8rem;
+    /* 內距：上下 0.6rem，左右 0.8rem */
+    border: 1px solid #e4d7b4;
+    /* 淺金色邊框 */
+    border-radius: 10px;
+    /* 圓角邊框 (10px) */
+    outline: none;
+    /* 移除瀏覽器預設的外框 */
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, .02);
+    /* 內陰影，製造輕微凹陷感 */
+    display: block;
+    /* 輸入框換行 */
+    margin-top: 4px;
+    /* 標籤與輸入框間距 */
+    margin-left: 6px;
+}
+
+
+/* ========================================================
+ATM轉帳
+======================================================== */
+
+.atm-info {
+    display: none;
+    margin-top: 12px;
+    padding: 12px 16px;
+    border: 1px solid #d9c3a5;
+    background: #fff8f1;
+    border-radius: 8px;
+    line-height: 1.6;
+}
+
+.atm-info h4 {
+    margin: 0 0 6px;
+    font-size: 1rem;
+    color: #7a2a0a;
+}
+
+.atm-info .note {
+    color: #b02a2a;
+    font-size: 0.9rem;
+}
+
+
+/* 顯示狀態 */
+
+.atm-info.show {
+    display: block;
+}
+
+
+/* 付款提示區塊 */
+
+.pay-hint {
+    display: none;
+    margin-top: 10px;
+    padding: 10px 14px;
+    background: #f6f1ea;
+    border-left: 4px solid #c49a6c;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #5a3b1e;
+}
+
+.pay-hint.show {
+    display: block;
+}
+
+
+/* ========================================================
+12. RWD / 響應式
+======================================================== */
+
+@media (max-width:980px) {
+    .two-col {
+        grid-template-columns: 1fr;
+    }
+    .main-section {
+        flex-direction: column;
+        gap: 14px;
+        padding: 28px 12px;
+    }
+}
+
+@media (max-width:520px) {
+    .address-group {
+        row-gap: 8px;
+    }
+    .address-group input[name="detail"] {
+        flex-basis: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .captcha {
+        flex-direction: column;
+        /* 由橫排變直排 */
+        align-items: flex-start;
+        /* 左對齊 */
+    }
+    .captcha-input {
+        width: 100%;
+        /* 輸入框滿版 */
+        max-width: 100%;
+    }
+    #captchaCanvas {
+        margin-top: 6px;
+    }
+}
+
+
+/* 小螢幕你想要改成 2 列或 1 列，可以用 media query */
+
+@media (max-width: 520px) {
+    /* 例：先把縣市 + 區鎮 一列，詳細地址 換到下一列 */
+    .address-group {
+        row-gap: 8px;
+    }
+    .address-group input[name="detail"] {
+        flex-basis: 100%;
+    }
+}
+
+
+/* */
+
+@media (max-width: 576px) {
+    .phone-group {
+        flex-direction: column;
+        /* 🔥 改成直排 */
+        align-items: stretch;
+        /* 撐滿寬度 */
+    }
+    .phone-group select,
+    .phone-group input {
+        height: 44px;
+        /* Apple 建議的可點高度 */
+        font-size: 16px;
+        /* 避免 iOS 自動放大 */
+    }
+    #phoneError {
+        text-align: center;
+        /* 手機錯誤置中 */
+    }
+}
