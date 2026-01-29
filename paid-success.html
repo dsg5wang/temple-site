@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <title>付款結果｜清水代天巡狩府</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            font-family: "Noto Sans TC", sans-serif;
+            background: #f7f5f2;
+            margin: 0;
+            padding: 30px 16px;
+            color: #333;
+        }
+        
+        .card {
+            max-width: 520px;
+            margin: auto;
+            background: #fff;
+            border-radius: 14px;
+            padding: 28px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+        }
+        
+        h1 {
+            text-align: center;
+            margin-top: 0;
+        }
+        
+        .success {
+            color: #1b7f3a;
+        }
+        
+        .pending {
+            color: #c47f00;
+        }
+        
+        .fail {
+            color: #b02a2a;
+        }
+        
+        .info {
+            margin-top: 18px;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+        
+        .info b {
+            display: inline-block;
+            width: 100px;
+        }
+        
+        .btn {
+            display: block;
+            margin-top: 30px;
+            text-align: center;
+            background: #b02a2a;
+            color: #fff;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <h1 id="title">付款結果</h1>
+
+        <div id="message" class="info"></div>
+
+        <div class="info" id="detail"></div>
+
+        <a class="btn" href="/">回首頁</a>
+    </div>
+
+    <script>
+        function getParam(name) {
+            return new URLSearchParams(location.search).get(name) || '';
+        }
+
+        const rtnCode = getParam('RtnCode'); // 1 = 成功
+        const orderNo = getParam('MerchantTradeNo');
+        const payType = getParam('PaymentType');
+        const tradeAmt = getParam('TradeAmt');
+
+        const title = document.getElementById('title');
+        const msg = document.getElementById('message');
+        const detail = document.getElementById('detail');
+
+        if (rtnCode === '1') {
+            title.textContent = '付款成功 🙏';
+            title.className = 'success';
+            msg.innerHTML = `
+    感謝您的善心功德，<br>
+    本府已收到您的點燈款項。
+  `;
+        } else if (rtnCode === '800') {
+            title.textContent = '等待付款中';
+            title.className = 'pending';
+            msg.innerHTML = `
+    您的訂單已建立，<br>
+    請依照繳費資訊完成付款。
+  `;
+        } else {
+            title.textContent = '付款未完成';
+            title.className = 'fail';
+            msg.innerHTML = `
+    本次付款尚未完成，<br>
+    若有疑問請與本府聯絡。
+  `;
+        }
+
+        detail.innerHTML = `
+  <div><b>訂單編號：</b>${orderNo || '—'}</div>
+  <div><b>付款方式：</b>${payType || '—'}</div>
+  <div><b>付款金額：</b>${tradeAmt ? tradeAmt + ' 元' : '—'}</div>
+`;
+    </script>
+
+</body>
+
+</html>
